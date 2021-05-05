@@ -36,7 +36,7 @@ public class ServiceTests {
                 Statement statement = connection.createStatement();
                 statement.executeUpdate("INSERT INTO animal VALUES (" + count + ", 'Картошка', 3, 3, 2, 3)");
             } catch (SQLException throwables) {
-                System.out.println("Нельзя добавить животное с id = " + count + ". " + throwables);
+                throwables.printStackTrace();
             }
         }
         connection.close();
@@ -49,7 +49,7 @@ public class ServiceTests {
             Statement statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO public.workman VALUES (7, NULL, 25, 2)");
         } catch (SQLException throwables) {
-            System.out.println("Ошибка: " + throwables);
+            throwables.printStackTrace();
         }
         connection.close();
     }
